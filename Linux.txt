@@ -1,14 +1,21 @@
 Linux
-Your first lab
+Basics
 man command
 pwd - print working directory
 echo - prints
 id - ids of current user in all grouds
 htop - all processes
 whoami - current user
+date - prints date and time
+cal - shows a calendar
+expr 3 * 2 - calculates expressions
+figlet 'string' - turns string to ASCII art
+
+
+
 
 Basic File Operations
-tocuh 
+tocuh
 echo "Text" > file
 mkdir
 ls -l (long) -a (all) -R (recursive), ls testdir
@@ -44,5 +51,30 @@ ls -lR dirName - for dirs
 ls -ld dirName - permissions for a directory, not contents
 
 User Account Managment
-
+    useradd - to create new users
+    passwd - to change user password
+    usermod - to modify user account
+    userdel - to delete user account
+sudo useradd joker - adding a user joker
+/etc/passwd - file with user accounts
+sudo grep -w 'joker' /etc/passwd - checking creation of the user
+joker:x:5001:5001::/home/joker:/bin/sh
+This line shows:
+    Username: joker
+    Password: x (the actual password is stored securely elsewhere)
+    User ID: 5001
+    Group ID: 5001
+    Home Directory: /home/joker, but it hasn't been created yet
+    Default Shell: /bin/sh
+sudo useradd -m bob - creating user with the home directory
+sudo passwd joker - setting a password for user joker
+/etc/shadow - user passwords are stored there
+sudo usermod -d /home/wayne joker - specifying a new home directory for user joker
+sudo usermod -s /bin/bash joker - modifying default user shel
+sudo usermod -aG sudo joker - adding user to group (-aG means append to Group)
+groups joker
+su - joker = switched user to joker
+sudo passwd -l joker = locked user joker
+sudo passwd -u joker = unlocked user joker
+sudo userdel -r bob = deleted user bob
 
