@@ -1,0 +1,11 @@
+Hello Bash
+#!/bin/bash - shebang, tells system that its a shell script
+echo 
+
+Shell Vars
+$varname - referencing vars
+"$greeting" - saves spaces
+current_date=$(date +"%Y-%m-%d") - uing command output fas var value
+bash -c - creating a child process
+unsent MY_VARIABLE - remove the environment var
+

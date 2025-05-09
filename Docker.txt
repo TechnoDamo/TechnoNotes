@@ -1,0 +1,58 @@
+Docker
+docker search
+docker pull hello-world
+docker run hello-world
+docker run -rm python:latest python --version = --rm remove container after exit, python --version run inside 
+docker run -d --name my-nginx-container my-nginx:v1
+docker run -it --name ubuntu-interactive ubuntu /bin/bash
+docker start nginx-detached
+docker stop nginx-detached
+docker restart nginx-detached
+docker inspect nginx-detached
+docker port nginx-detached
+docker run -d --name nginx-with-port -p 8080:80 nginx
+docker run --name env-test -e MY_VAR="Hello, Environment" -d ubuntu sleep infinity
+docker run --name limited-nginx -d --memory=512m --cpus=0.5 nginx
+docker run -d --name nginx-volume -p 8081:80 -v ~/project/nginx-data:/usr/share/nginx/html nginx
+docker exec nginx-detached echo "Hello from inside the container"
+docker exec -it nginx-detached /bin/bash
+docker rmi image-name
+docker rm container name/id
+docker images
+docker ps -a
+docker stats
+docker logs, docker logs --tail 10 container, docker logs -f container, --timestamps
+docker inspect --format='{{.RootFS.Layers}}' nginx
+docker build -t custom-nginx .
+docker save nginx > nginx.tar
+docker load < nginx.tar
+docker tag nginx:latest my-nginx:v1
+docker cp hello.html nginx-detached:/usr/share/nginx/html/hello.html
+docker cp nginx-detached:/etc/nginx/nginx.conf ./nginx.conf
+docker network create my-custom-network
+docker run -d --name nginx-networked --network my-custom-network nginx
+docker run -d --name nginx-restart --restart unless-stopped nginx
+docker run -d --name nginx-custom -w /app nginx sh -c "touch newfile.txt && nginx -g 'daemon off;'"
+muilti-stage builds
+
+Networking Basics
+docker network ls - lists all docker networks on the system
+example output:
+NETWORK ID     NAME      DRIVER    SCOPE
+79dce413aafd   bridge    bridge    local
+91199fc6ad2e   host      host      local
+1078d2c781b6   none      null      local
+bridge - default network driver, may connect containers with their ips.
+host - shares network with host machine
+none - isolates container
+SCOPE indicates whether network is limited to single host
+docker network bridge inspect - inspecting the bridge network
+Subnet - f.e. 172.17.0.0/16 means containers will be assigned IPs within this range
+Gateway - ip that containers  use to communicate with other networks on their own
+docker network create --driver bridge my-network
+docker run -d --name containerName --network my-network nginx = starts nginx container on my-network network
+docker exec container1 curl -s container2 = sending curl request from one container to another on the same network
+docker run -d --name exposed-container -p 8080:80 --network my-network nginx
+
+
+

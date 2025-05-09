@@ -1,0 +1,38 @@
+PostgreSQL
+sudo apt install postgresql postgresql-contrib -y - installation
+pg_isready - checking service status
+sudo service postgresql start/stop/restart - if old/containerised 
+
+Acessing the shell
+sudo -i -u postgres
+psql
+
+sudo -u postgres psql
+
+\q - quit psql shell
+\l - available databases
+\c dbname - connect/dissconnect to a db
+\dt - display a list of tables
+\d table_name - describe a table
+\conninfo - info about current db connection
+SELECT version(); - check PostgreSQL version
+SELECT user - current db user
+SELECT current_database(); - name of db you are connected to
+SHOW - view configuration settings
+SHOW listen_addresses; - where server listens for connections
+
+
+Database Managment Basics
+createdb db_name
+CREATE DATABASE db_name;
+psql -d postgres = connect to postgres db
+psql -l = shows all dbs on server
+SELECT version(); - displays PostgreSQL version
+dropdb db_name
+
+
+
+Table Creation and Data Types
+sudo -u postgres psql
+
+

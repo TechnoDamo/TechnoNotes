@@ -1,0 +1,52 @@
+Git
+Basics
+git init 
+git status
+git add
+git commit 
+git log
+git rm - stop tracking a file
+
+Config managment
+--local --gloabal --system configs
+git config --list - all configs
+git config user.name - vieweing/setting specific config
+git config --gloabal alias.st status - now git st = git status
+
+Files and Staging area 
+git diff
+git diff --staged 
+git restore --staged hello.py
+
+Branch basics
+git branch, git branch --merged, git branch -d for-delete, git branch -D, git branch -a 
+git checkout new-branch-name
+git switch to-branch-name
+git switch -c || git checkout -b = creation and switching 
+types of merges, fast-forward merge
+git merge brnch-merge-into-current
+
+Advanced Commit
+commit --ammend -m = rewrites latest commit
+git log --oneline
+git restore . - discards unstaged changes
+git revert HEAD/commit hash
+git reset = destructive and not preferred as overwrites history
+git cherry-pick commit-hash
+git commit -am = stages all deletions and edits 
+git rebase -i hash/HEAD~x = starting a rebase session, -i stands for interactive
+git rebase --abort, git rebase -i --root
+
+Saving work in progress
+Stash - saves changes to tracked files, but doesn't commit them
+git stash 
+git stash -u/--include-untracked 
+git stash list - view stashed entries
+git stash apply - Re-apply the most recent, or certain stash
+git stash pop - apply the most recent stash and remove it from the stash list
+git stash drop - delete a specific stash
+git stash clear 
+git stash branch branchName - creates a new branch applying stashed changes to it
+git stash show -p stash@{1}
+
+

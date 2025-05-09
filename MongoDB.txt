@@ -1,0 +1,23 @@
+First
+mongosh - start MongoDB shell
+show dbs - show databases
+use database_name - swutch/create new db
+db - show current db
+show collections
+db.users.insertOne({ document }) - insert to collection users
+db.books.inserMany([ documents ])
+db.users.find() - get all documents from the user collection
+db.books.find({ author: "John Doe" })
+db.books.countDocuments()
+db.books.deleteOne({ title: "MongoDB Basics" })
+db.books.deleteMany({ year: { $lt: 2022 } })
+
+Create First Collections
+db.createCollection("name")
+db.students.stats() - detailed info about collection
+db.students.dataSize() 
+db.students.count()
+db.students.getIndexes()
+db.students.drop() - drop students collection
+
+

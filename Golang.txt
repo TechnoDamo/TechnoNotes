@@ -1,0 +1,22 @@
+Golang
+Printf placeholders
+
+GOROOT/GOPATH/Go module
+go mod init - initializing a go project 
+module - specifies the package
+require - specifies dependencies
+replace - replaces dependencies
+exclude - excludes dependencies
+go get snth - downloads smth and place it to our module cache
+
+Go Variables
+var varName varType
+var (
+	varname varType
+	...
+)
+var a = 1
+a := 1
+a, b, c := 0
+a, b, c := 1, 2, "3"
+

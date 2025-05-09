@@ -1,0 +1,48 @@
+Linux
+Your first lab
+man command
+pwd - print working directory
+echo - prints
+id - ids of current user in all grouds
+htop - all processes
+whoami - current user
+
+Basic File Operations
+tocuh 
+echo "Text" > file
+mkdir
+ls -l (long) -a (all) -R (recursive), ls testdir
+cp what where, cp -r (recursive) what where
+mv what where
+rmdir - for empy dirs
+rm -r -f -i
+
+File contents and comparing
+cat file, cat -n file
+head -n1 (default first 10 listes - n10) file = exact number of lines form the begining
+head -c1 = exact number of bites from the begining
+tail -n1/-c1
+diff
+
+Permissions of FIles
+chown - modify grouand user ownership of a file
+chown newOwner:newGroup fileName
+chown -R root:root dirName - recursively for all files
+chmod - change permissions of a file
+chmod u+x fileName - add execute permission to user group
+firstDigit - owners permission
+Second digit - groups permission
+Third digit - others permissions
+4 - read permission
+2 - write permission
+1 - execute permission
+0 - no permission
+
+
+ls -l filename - check permissions for a file
+ls -lR dirName - for dirs
+ls -ld dirName - permissions for a directory, not contents
+
+User Account Managment
+
+

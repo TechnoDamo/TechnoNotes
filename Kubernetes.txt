@@ -1,0 +1,52 @@
+Kubernetes
+minikube
+minikube start
+minikube status
+kubectl get nodes
+* kubernetes control plane
+* kubernetes cluster, its state, worker nodes
+* kubernetes pods
+Controle-Plane struct:
+ kube-apiserver (API)
+ etcd (Key Value Store) - all configs and current cluster state
+ kube-scheduler (SCH) - assigns Pods to Nodes
+ kube-controller-manager (CTLM) - runs controllers that control that all is ok in the custer
+ 
+Nodes strcut
+ kubelet (KLT) - agent, talks to CP, ensures pods are running and reports their status
+ Container Runtime (CR) - soft for mananing containers
+ 
+Pod (smallest deployable uniit) - typically a single instance of a running app. May contain one or more containers with shared network namespace and storage volumes.
+
+Services - an abstraction that defines logical set of pods 
+and a policy for how to access them.
+
+CoreDNS service
+
+kubectl cluster-info
+kubectl get nodes -o wide
+kubectl describe node minikube
+kubectl get pods -A
+kubectl get pods -n/--namespace kube-system
+kubectl get deployments -A
+kubectl get all -A
+
+kubectl [command] [TYPE] [NAME] [flags]
+kubectl: The command-line tool itself.
+[command]: Specifies what action you want to perform. Common commands include:
+	get
+	describe
+	create
+	delete
+	apply
+[TYPE]: Specifies the Kubernetes resource type you want to interact with. Common resource types include:
+	pods
+	deployments
+	services
+	nodes
+	namespaces
+[NAME]: The name of a specific resource. This is optional; if you omit the name, kubectl will operate on all resources of the specified type.
+[flags]: Optional flags to modify the command's behavior (e.g., -n <namespace>, -o wide).
+
+kubectl apply -f config.yaml
+
